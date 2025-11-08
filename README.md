@@ -15,7 +15,8 @@ A real-time GPS location tracking app built with React Native and Expo. Track yo
 ## Screenshots
 
 ### Running App in Expo
-![screenshot1](./assets/i.png)
+![screenshot1](./assets/screenshot1.png)
+
 
 ### Home Screen
 - Welcome screen with app description
