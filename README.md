@@ -18,10 +18,6 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
@@ -39,12 +35,68 @@ This command will move the starter code to the **app-example** directory and cre
 
 To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
 ## Join the community
 
 Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## LiveLocationApp — Google-maps-like features
+
+This project demonstrates a live location map using Expo, `react-native-maps`, and Google Maps Platform APIs (Places, Directions, Roads).
+
+Important: The app includes client-side calls to Google APIs (Places Autocomplete, Place Details, Directions, Roads). You MUST provide your Google API key and enable billing and the corresponding APIs in Google Cloud Console.
+
+## Setup (add your API key)
+
+1. Add your API key into `app.json` under `expo.extra.googleMapsApiKey`:
+
+```json
+{
+   "expo": {
+      "extra": {
+         "googleMapsApiKey": "YOUR_GOOGLE_API_KEY"
+      }
+   }
+}
+```
+
+Alternatively, set an environment variable before starting the dev server:
+
+PowerShell:
+
+```powershell
+$env:GOOGLE_MAPS_API_KEY = "YOUR_GOOGLE_API_KEY"
+npm start
+```
+
+Linux/macOS:
+
+```bash
+export GOOGLE_MAPS_API_KEY="YOUR_GOOGLE_API_KEY"
+npm start
+```
+
+2. Restrict the API key for production in Google Cloud Console (Android package + SHA1 and iOS bundle id).
+
+3. Enable the following APIs in Google Cloud:
+- Places API
+- Directions API
+- Roads API (optional, used for snap-to-road)
+
+## How it works
+
+- Search box uses Places Autocomplete (debounced + small cache) to show suggestions.
+- Selecting a suggestion fetches Place Details and recenters the map.
+- FAB starts Directions from current location to the selected place and draws a polyline.
+- The app periodically attempts to `snapToRoads` for better visual accuracy (if the Roads API is enabled).
+
+## Notes
+
+- For production, proxy Google API calls via your backend or ensure API key restrictions are set.
+- Autocomplete caching is a simple in-memory cache with a 5-minute TTL.
+- Directions and Roads API calls are billable.
+
+## Troubleshooting
+
+If autocomplete or directions don't return results, confirm your key is present and the APIs are enabled. Check Metro logs for network errors.
