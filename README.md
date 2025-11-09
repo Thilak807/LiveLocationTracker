@@ -15,6 +15,15 @@ A real-time location tracking app built with Expo and React Native, featuring li
 
 [📱 Watch Demo Video](https://drive.google.com/file/d/1X51m923z8rAp7lfwo8p-pEn9O9x2XMbR/view?usp=sharing)
 
+
+## Screenshots 📸
+
+### Home Screen
+<img src="./images/Live Location Tracker1.jpeg" width="300" />
+
+### Live Tracking Screen
+<img src="./images/Live Location Tracker2.jpeg" width="300" />
+
 ## Tech Stack 💻
 
 - [Expo](https://expo.dev/) - React Native development platform
@@ -37,7 +46,7 @@ A real-time location tracking app built with Expo and React Native, featuring li
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/thilakrajp/LiveLocationTracker.git
+   git clone https://github.com/Thilak807/LiveLocationTracker
    cd LiveLocationTracker
    ```
 
@@ -123,7 +132,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Thilak Raj P  
 GitHub: https://github.com/Thilak807
-Project Link: [https://github.com/thilakrajp/LiveLocationTracker](https://github.com/thilakrajp/LiveLocationTracker)
+Project Link: [https://github.com/Thilak807/LiveLocationTracker](https://github.com/Thilak807/LiveLocationTracker)
 
 ## Acknowledgements 🙏
 
