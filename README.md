@@ -23,7 +23,7 @@ A real-time location tracking app built with Expo and React Native, featuring li
 
 ### Live Tracking Screen
 <img src="./assets/images/Live Location Tracker2.jpeg" width="300" />
-<img src="./assets/images/Livelocationtracker.png" width="300" />
+<img src="./assets/images/Livelocationtracker.png" width="600" />
 
 
 ## Tech Stack 💻
